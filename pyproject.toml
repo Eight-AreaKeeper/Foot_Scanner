@@ -1,0 +1,26 @@
+[project]
+name = "foot-scanner"
+version = "0.1.0"
+description = "用手机照片和一张 A4 纸测量脚长、脚宽，用于球鞋定制"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python-headless>=4.8",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+foot-scanner = "foot_scanner.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["foot_scanner"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
