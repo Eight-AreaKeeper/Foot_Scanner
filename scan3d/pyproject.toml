@@ -1,0 +1,27 @@
+[project]
+name = "foot-scanner3d"
+version = "0.1.0"
+description = "手机绕脚拍摄 + A4 纸，重建 3D 脚型并测量围度（M2 原型）"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python-headless>=4.8",
+    "scipy>=1.10",
+    "scikit-image>=0.21",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+foot-scanner3d = "foot_scanner3d.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["foot_scanner3d"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
